@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RajViraj Tours and Travels</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="phone.css"> -->
+</head>
+<body>
+    <!-- Navbar  -->
+    <div class="navbar">
+        <div class="left">
+            RajViraj
+        </div>
+        <div class="right">
+            <a href="#home" class="link">Home</a>
+            <a href="#ride" class="link">Ride</a>
+            <a href="#about" class="link">About</a>
+            <a href="#contact" class="link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Home Section  -->
+    <section class="home" id="home">
+
+        <div class="text">
+            <h1><span>BOOK</span> A CAR TODAY</h1>
+        </div>
+
+        <div class="form-container">
+            <form action="">
+                <div class="input-box">
+                    <span>Name</span>
+                    <input type="search" name="" id="" placeholder="Enter Name">
+                </div>
+                <div class="input-box">
+                    <span>Contact No </span>
+                    <input type="search" name="" id="" placeholder="Enter Phone No">
+                </div>
+                <div class="input-box">
+                    <span>Location</span>
+                    <input type="search" name="" id="" placeholder="Search Place ">
+                </div>
+                <div class="input-box">
+                    <span>Pick-Up Date</span>
+                    <input type="date" name="" id="">
+                </div>
+                <div class="input-box">
+                    <span>Return Date</span>
+                    <input type="date" name="" id="">
+                </div>
+
+                <input type="submit" value="BOOK NOW" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <!-- Ride -->
+    <div class="ride" id="ride">¯
+        <div class="heading">
+            <h1>How It's Work</h1>
+            <h1>Book With 3 Easy Setps</h1>
+        </div>
+        <div class="ride-container">
+                <div class="box">
+                    <i class="bx bxs-map"></i>
+                    <h2>Choose A Location</h2>
+                    <p>Discover your next traveling location ! From the Windy hills to City Streets . Where will your next journey take you ?</p>
+                </div>
+                <div class="box">
+                    <i class="bx bx-calender-check"></i>
+                    <h2>Pick-Up Date</h2>
+                    <p>Select Your Travel Date with ease! Our user-friendly calender makes planning a breeze .Find a perfect date to embark on Your next Journey</p>
+                </div>
+                <div class="box">
+                    <i class="bx bxs-calender-star"></i>
+                    <h2>Book Your Ride</h2>
+                    <p>Secure Your Ride Effortlessly! Our booking platform simplifies travel arrangement. Your seamless traveling experience starts here </p>
+                </div>
+        </div>
+    </div>
+    <!-- About  -->
+    <section class="about" id="about">
+        <div class="heading">
+            <h1>About Us</h1>
+            <h1>Best Customer Experiance</h1>
+        </div>
+        <div class="about-container">
+            <div class="about-img">
+                <div id="slideshow-container">
+                    <img src="img1.jpeg" name="Slide">
+                </div>
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+            <div class="about-text">
+                <span>About Us</span>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur totam a labore nostrum hic, voluptatum voluptatibus ullam corporis voluptate voluptas doloribus commodi quidem nihil perferendis tempore assumenda? Ratione nesciunt vitae doloribus maxime!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vitae cumque ipsum pariatur vero, dolorem placeat delectus voluptas, alias, molestias ex facilis.</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Contact  -->
+    <section class="contact" id="contact">
+        <div class="heading">
+            <h2>Contact Us </h2>
+        </div>
+        <div class="contact-info">
+            <span>Reach Us at &emsp;</span>
+            <img src="gmail.png" alt="Gmail" width="20px">
+            <a href="mailto:vireshkamlapure7@gmail.com">vireshkamlapure7@gmail.com</a>
+            <img src="phone.png" alt="Phone" width="20px">
+            <span> &nbsp;9322411615&nbsp;</span>
+            <img src="facebook.png" alt="" width="20px">
+            <a href="https://www.instagram.com/its__viraj04?utm_source=qr">FaceBook</a>
+        </div>
+    </section>
+
+
+    <script>
+        var images = ['img1.jpeg', 'img2.jpeg', 'img3.jpeg', 'img4.jpeg', 'img5.jpeg', 'img6.jpeg'];
+        var slideIndex = 0;
+        var autoSlideInterval = 3000; // 3 seconds
+
+        function showSlide(index) {
+            var slideshow = document.getElementsByName('Slide')[0];
+            slideshow.src = images[index];
+            slideIndex = index;
+            updateDots();
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % images.length;
+            showSlide(slideIndex);
+        }
+
+        function previousSlide() {
+            slideIndex = (slideIndex - 1 + images.length) % images.length;
+            showSlide(slideIndex);
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        function updateDots() {
+            var dots = document.getElementsByClassName('dot');
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            dots[slideIndex].classList.add('active');
+        }
+
+        // Initial display and auto-slide
+        showSlide(slideIndex);
+        setInterval(nextSlide, autoSlideInterval);
+    </script>
+
+</body>
+</html>
